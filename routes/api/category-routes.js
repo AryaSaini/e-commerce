@@ -69,6 +69,9 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id,
       }
     });
+    res.send({
+      message: "Deleted"
+    })
     if (!categoryData) {
       res.status(404).json({ message: 'No category with given id' })
       return;
@@ -76,6 +79,7 @@ router.delete('/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
+
 });
 
 module.exports = router;
